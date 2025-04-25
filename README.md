@@ -34,13 +34,14 @@ The model was trained on the MNIST dataset using:
 
 ## Demo
 
-![MNIST Digit Recognizer Demo](media/mnist_demo.gif)
+![MNIST Digit Recognizer Demo](media/mnist.gif)
 
-The MNIST Digit Recognizer correctly identifies handwritten digits from 0-9, including:
-- Drawing with various stroke widths
-- Recognizing the digit '0' properly (not confused with null)
+The MNIST Digit Recognizer correctly identifies handwritten digits from 0-9
+
 - Displaying confidence scores for all possible digits
 - Real-time processing with the CNN model
+
+This is a great way to test my trained model and get feedback on how I can improve it in the future.
 
 ## Running the Application with Docker 
 

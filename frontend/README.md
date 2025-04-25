@@ -45,7 +45,7 @@ docker run -p 3000:3000 mnist-frontend
 
 ## Demo
 
-![MNIST Digit Recognizer Demo](../media/mnist_demo.gif)
+![MNIST Digit Recognizer Demo](../media/mnist.gif)
 
 The interface allows users to:
 - Draw digits on a responsive canvas
