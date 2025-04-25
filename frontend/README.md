@@ -43,6 +43,16 @@ docker build -t mnist-frontend .
 docker run -p 3000:3000 mnist-frontend
 ```
 
+## Demo
+
+![MNIST Digit Recognizer Demo](../media/mnist_demo.gif)
+
+The interface allows users to:
+- Draw digits on a responsive canvas
+- Get real-time predictions from the model
+- See confidence scores for each possible digit (0-9)
+- Clear and redraw as needed
+
 ## API Integration
 
 The application connects to a FastAPI backend that hosts the CNN model for digit recognition. 

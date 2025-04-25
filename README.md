@@ -2,9 +2,11 @@
 
 A full-stack application with a CNN model trained on MNIST data for digit recognition.
 
+> **Note:** This is my first machine learning project using Convolutional Neural Networks (not counting previous work with Artificial Neural Networks).
+
 ## Architecture
 
-- **Frontend**: Simple HTML/CSS/JS interface with canvas for drawing digits
+- **Frontend**: Next.js application with React and Tailwind CSS featuring a drawing canvas
 - **Backend**: FastAPI server with PyTorch model for digit recognition
 - **Proxy**: Nginx for serving the frontend and proxying API requests to the backend
 - **Model**: CNN with two convolutional blocks and a fully connected classifier
@@ -29,46 +31,25 @@ The model was trained on the MNIST dataset using:
 - Learning rate scheduling
 - Early stopping
 
-You can explore the training process in:
-- `main.ipynb`: Jupyter notebook with the original training code and experiments
-- `train.py`: Standalone script extracted from the notebook for retraining the model
 
-To retrain the model:
+## Demo
 
-```bash
-python train.py
-```
+![MNIST Digit Recognizer Demo](media/mnist_demo.gif)
 
-## Running the Application
+The MNIST Digit Recognizer correctly identifies handwritten digits from 0-9, including:
+- Drawing with various stroke widths
+- Recognizing the digit '0' properly (not confused with null)
+- Displaying confidence scores for all possible digits
+- Real-time processing with the CNN model
 
-### With Docker
+## Running the Application with Docker 
 
 ```bash
 # Build and run with Docker Compose
-docker-compose up -d
-
-# Access the applications at:
-# - Frontend: http://localhost (port 80)
-# - Backend API: http://localhost/predict/ (proxied through Nginx)
+docker compose up -d
 ```
 
-### Without Docker
-
-#### Backend
-
-```bash
-cd backend
-pip install -r requirements.txt
-uvicorn server:app --reload
-```
-
-#### Frontend
-
-```bash
-cd frontend
-npm install
-npm run dev
-```
+Once the application is running, access it at http://localhost in your browser.
 
 ## Usage
 
@@ -90,24 +71,4 @@ The model achieves approximately 99.6% accuracy on the MNIST test set.
 - **backend/**: FastAPI backend serving the CNN model
 - **frontend/**: Next.js frontend application with Tailwind CSS
 - **nginx/**: Nginx configuration for proxying requests
-- **train.py**: Script for training the CNN model on MNIST dataset
-- **main.ipynb**: Jupyter notebook exploring the model and dataset
-
-```
-.
-├── docker-compose.yaml   # Docker Compose configuration
-├── main.ipynb            # Original training notebook
-├── train.py              # Training script for the model
-├── backend/
-│   ├── server.py         # FastAPI server with model
-│   ├── best_model.pt     # Trained CNN model
-│   ├── Dockerfile        # Backend Dockerfile
-│   └── requirements.txt  # Python dependencies
-├── frontend/
-│   ├── src/              # Next.js application source code
-│   ├── public/           # Static assets
-│   ├── Dockerfile        # Frontend Dockerfile
-│   └── package.json      # Frontend dependencies
-└── nginx/
-    └── nginx.conf        # Nginx configuration
-```
+- **media/**: Contains demonstration GIFs and images
